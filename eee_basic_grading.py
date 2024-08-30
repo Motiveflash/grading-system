@@ -24,6 +24,8 @@ def input_course_data():
         for _ in range(num_students):
             student_name = input("Enter the student name: ")
             student_score = int(input("Enter the student score "))
+            while student_score < 0 or student_score > 100:
+                student_score = int(input("Invalid student score\nScore must be from 0 and 100: "))
             student_grade = assign_grade(student_score)
             students.append({'student_name' : student_name, 'student_score' : student_score, 'student_grade' : student_grade})
         courses.append({'Course' : courses, 'Students' : students})
